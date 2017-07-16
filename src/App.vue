@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <img src="./assets/logo.png">
     <router-view></router-view>
   </div>
@@ -7,7 +7,13 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  mounted() {
+    this.$loading()
+    setTimeout(() => {
+      this.$loading.end()
+    }, 3000)
+  },
 }
 </script>
 
