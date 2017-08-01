@@ -46,32 +46,33 @@
     mounted() {
       this.val = this.initVal
       let step =  this.step
-      let timer = setInterval(() => {
+      let loop = () => {
         this.val = this.val + step
         this.$el.style.width = this.val + '%'
         if (this.val >= this.stopVal) {
-          clearInterval(timer)
+          cancelAnimationFrame(timer)
           return
         }
-      }, 10)
-    },
-    methods: {
+        requestAnimationFrame(loop)
+      }
+      let timer = requestAnimationFrame(loop)
     },
     watch: {
       isOk() {
         let val = this.val
         let step =  this.step
-        let timer = setInterval(() => {
-          console.log(val, step)
+        let loop = () => {
           val = val + step
           this.$el.style.width = val + '%'
           if (val >= 100) {
-            clearInterval(timer)
+            cancelAnimationFrame(timer)
             this.isShow = false
             this.$emit('callback', 'load success')
             return
           }
-        }, 10)
+          requestAnimationFrame(loop)``
+        }
+        let timer = requestAnimationFrame(loop)
       },
     },
   }
