@@ -1,6 +1,6 @@
-# my-vue
+# vue-collect
 
-> A Vue.js project
+> collect tips or components
 
 ## Build Setup
 
