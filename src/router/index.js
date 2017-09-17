@@ -6,6 +6,7 @@ import checkbox from '../view/checkbox'
 import scrollfixed from '../view/scroll-fixed'
 import flowerbtn from '../view/flower-btn'
 import ellipsis from '../view/ellipsis'
+import starrysky from '../view/starry-sky'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
       path: '/ellipsis',
       name: 'ellipsis',
       component: ellipsis
+    }, {
+      path: '/starrysky',
+      name: 'starrysky',
+      component: starrysky
     }
   ]
 })
